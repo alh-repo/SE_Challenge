@@ -9,7 +9,7 @@ python -m cProfile coreSE_challenge.py
 
 '''
 
-print('\n   Largest Common Byte Strand\n')
+print('\n   Longest Common Byte Strand\n')
 
 
 files = ['sample.1','sample.2','sample.3','sample.4','sample.5',
