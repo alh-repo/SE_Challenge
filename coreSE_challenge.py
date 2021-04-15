@@ -8,8 +8,6 @@ To get run time stats:
 python -m cProfile coreSE_challenge.py
 
 '''
-from collections import Counter
-
 
 print('\n   Largest Common Byte Strand\n')
 
