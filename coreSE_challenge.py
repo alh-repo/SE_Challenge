@@ -18,7 +18,6 @@ files = ['sample.1','sample.2','sample.3','sample.4','sample.5',
 		'sample.6','sample.7', 'sample.8','sample.9','sample.10']
 glossary = {}
 common_bytes = []
-offset = 0
 max_len = 0
 longest_common =  bytes()
 
