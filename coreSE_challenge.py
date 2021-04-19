@@ -3,6 +3,7 @@
 '''
 Author: Adam Hennefer
 Date: April 14, 2021
+version:  Python 3.6
 
 To get run time stats:
 python -m cProfile coreSE_challenge.py
@@ -29,19 +30,19 @@ for file_num, file_name in enumerate(files):
 				prev = glossary[strand]
 				# try clause will only continue if the byte strand was in the glossary
 				if strand == longest_common:
-					common_bytes.append(('   sample.'+str(file_num+1), offset))
+					common_bytes.append((file_name, offset))
 				elif strand_len > max_len:
 					max_len = strand_len
 					longest_common = strand
-					common_bytes = [prev, ('   sample.'+str(file_num+1), offset)]
+					common_bytes = [prev, (file_name, offset)]
 			except KeyError as e:
-				glossary[strand] = ('   sample.'+str(file_num+1), offset)
+				glossary[strand] = (file_name, offset)
 			offset += strand_len
 
 if not common_bytes:
 	print('   No common bytes found.')
 else:
-	print('{0:<10} {1:>9}'.format('   File','Offset'), sep="  ")
+	print('{0:>11} {1:>9}'.format('File','Offset'), sep="  ")
 	for file, offset in common_bytes:
-		print('{0:<10} {1:>8}'.format(file, offset), sep="  ")
+		print('{0:>11} {1:>9}'.format(file, offset), sep="  ")
 
