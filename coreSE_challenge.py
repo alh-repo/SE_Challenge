@@ -21,7 +21,7 @@ max_len = 0
 longest_common =  bytes()
 
 
-for file_num, file_name in enumerate(files):
+for file_name in files:
 	offset = 0
 	with open(file_name, 'rb') as file:
 		for strand in file:
