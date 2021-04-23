@@ -10,7 +10,7 @@ python -m cProfile coreSE_challenge.py
 
 '''
 
-print('\n   Longest Common Byte Strand\n')
+print('\n   Longest Common Byte Strand:\n')
 
 
 files = ['sample.1','sample.2','sample.3','sample.4','sample.5',
@@ -40,9 +40,8 @@ for file_name in files:
 			offset += strand_len
 
 if not common_bytes:
-	print('   No common bytes found.')
+	print('   No common bytes found.\n')
 else:
-	print('{0:>11} {1:>9}'.format('File','Offset'), sep="  ")
+	print(f"{'Files': >11} {'Offset': >9}")
 	for file, offset in common_bytes:
-		print('{0:>11} {1:>9}'.format(file, offset), sep="  ")
-
+		print(f"{file: >11} {offset:>9}")
