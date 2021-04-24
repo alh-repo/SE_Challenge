@@ -36,7 +36,8 @@ for file_name in files:
 					longest_common = strand
 					common_bytes = [prev, (file_name, offset)]
 			except KeyError as e:
-				glossary[strand] = (file_name, offset)
+				if strand_len > max_len:
+					glossary[strand] = (file_name, offset)
 			offset += strand_len
 
 if not common_bytes:
