@@ -6,7 +6,7 @@ Date: April 24, 2021
 version:  Python 3.6
 
 To get run time stats:
-python -m cProfile coreSE_challenge.py
+python -m cProfile se_challenge.py
 
 '''
 import os
