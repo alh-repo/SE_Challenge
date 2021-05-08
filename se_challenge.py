@@ -2,7 +2,7 @@
 
 '''
 Author: Adam Hennefer
-Date: April 24, 2021
+Date: May 7, 2021
 Requires:  Python 3.6
 
 To get run time stats:
@@ -19,16 +19,18 @@ files = ['sample.1','sample.2','sample.3','sample.4','sample.5',
 cache = {}
 common_bytes = []
 max_len = 0
-longest_common =  bytes()
+longest_common = prev = bytes()
 
 
 for file_name in files:
-	if common_bytes:   # clear cache smaller than largest common byte
-		#print(f"{'size of cache: ': >11} {len(cache): >9}")
-		cache = {k:v for (k, v) in cache.items() if len(k) > max_len}
-	
 	file_size = os.path.getsize(file_name)
 	offset = 0
+	
+	if prev != common_bytes:   # clear cache smaller than largest common byte
+		#print(f"{'size of cache: ': >11} {len(cache): >9}")
+		cache = {k:v for (k, v) in cache.items() if len(k) > max_len}
+		prev = common_bytes
+		
 	with open(file_name, 'rb') as file:
 		for strand in file:
 			strand_len = len(strand)
